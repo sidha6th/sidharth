@@ -1,10 +1,12 @@
-import Home from './pages/Home'
+import Home from './pages/Dashboard'
+import{store} from'./redux/store'
+import { Provider } from 'react-redux'
 
 function App() {
   return (
-    <>
-    <Home></Home>
-    </>
+    <Provider store={store} >
+    <Home/>
+    </Provider>
   )
 }
 

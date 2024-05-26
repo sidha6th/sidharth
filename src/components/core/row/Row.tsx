@@ -4,7 +4,7 @@ import "./Row.css"
 
 export type RowArgs = {
   marginColumnCount?: MarginColumnCount;
-  children: JSX.Element[];
+  children: JSX.Element[]|JSX.Element;
 };
 
 export function Row(arg: RowArgs) {

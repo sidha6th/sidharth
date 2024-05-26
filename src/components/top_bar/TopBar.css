@@ -2,4 +2,37 @@
   background-color: #333333;
   height: 40px;
   border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+#colored-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.red {
+  background-color: #ed484f;
+  &:hover {
+    box-shadow: 0 0 2px 2px #ed484f;
+  }
+}
+
+.yellow {
+  background-color: #f8b42b;
+  &:hover {
+    box-shadow: 0 0 2px 2px #f8b42b;
+  }
+}
+
+.green {
+  background-color: #27d93b;
+  &:hover {
+    box-shadow: 0 0 2px 2px #27d93b;
+  }
 }

@@ -1,7 +1,5 @@
-import "./Home.css";
+import "./Dashboard.css";
 
-import image from "../assets/my_image.jpeg";
-import { FlutterProgramStyledText } from "../components/flutter_programe/FlutterPrograme";
 import { TopTabBar } from "../components/top_bar/TopBar";
 import { BottomBar } from "../components/bottom_bar/BottomBar";
 import { SideBar } from "../components/side_bar/SideBar";

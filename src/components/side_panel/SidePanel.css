@@ -4,4 +4,37 @@
   width: 400px;
   position: absolute;
   left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+p,.arrow-down{
+  padding: 0px;
+  margin: 0px;
+}
+.title1{
+  font-size: 10px;
+  font-weight:100;
+}
+.proj-name{
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.title-box,.title-box2{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  padding: 0px 10px 0px 10px;
+}
+.title-box{
+  justify-content: space-between;
+}
+.title-box2{
+  justify-content: start;
+}
+
+
+.arrow-down{
+  width: 10px;
 }
