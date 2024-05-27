@@ -1,31 +1,19 @@
-import { useDispatch } from "react-redux";
-import "./SidePanel.css";
-import { onTapEditorTitleCard } from "../../redux/slice/editor_slice";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons/faChevronDown";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./SidePanel.scss";
+import { ArrowIcon } from "../icons/arrow_icon/ArrowIcon";
+import { ExpansionTileListHolder } from "./folder_or_file_list_holder/ExpansionTileListView";
+import { folders } from "../../redux/app_state/folders";
 
 export function SidePanel() {
-  const dispatch = useDispatch();
-
   return (
     <div id="side-panel">
       <div className="title-box">
-        <p  className="title1">Explore</p>
-        <FontAwesomeIcon
-          className="arrow-down"
-          icon={faChevronDown}
-          style={{ color: "#ffffff" }}
-        />
+        <p className="title1">Explore</p>
       </div>
       <div className="title-box2">
-        <FontAwesomeIcon
-          className="arrow-down"
-          icon={faChevronDown}
-          style={{ color: "#ffffff" }}
-        />
+        <ArrowIcon opened />
         <p className="proj-name">Sidharth</p>
       </div>
-      <li onClick={() => dispatch(onTapEditorTitleCard(1))}>1</li>
+      <ExpansionTileListHolder folders={folders}/>
     </div>
   );
 }

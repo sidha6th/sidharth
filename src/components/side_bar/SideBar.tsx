@@ -1,5 +1,5 @@
-import './SideBar.css'
+import './SideBar.scss'
 
 export function SideBar() {
-    return <div id="side-bar"></div>;
+    return <div id={"side-bar"}></div>;
 }

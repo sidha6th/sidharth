@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./EditorsViewHolder.css";
 import { Constants } from "../../../../common/constant";
-import { PagesTitleCardHoldingComponent } from "../../../../components/pages_title_card_holding_component/PagesTitleCardHoldigComponent";
 import { EditorViewComponent } from "../editor_page/EditorPage";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
+import { PagesTitleCardHoldingComponent } from "../editor_title_card_holding_component/EditorTitleCardHoldigComponent";
 
 export function EditorsViewHolder() {
   const [viewSize, setSize] = useState(window.outerWidth);
@@ -34,7 +34,7 @@ export function EditorsViewHolder() {
 
   return (
     <div id="pages-wrapper" style={{ width: `${viewSize}px` }}>
-      <PagesTitleCardHoldingComponent title="Welcome" />
+      <PagesTitleCardHoldingComponent/>
       <div className="opened-page-holder">
         {state.openedEditors.map((_) => EditorViewComponent())}
       </div>

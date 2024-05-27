@@ -1,13 +1,11 @@
-import Home from './pages/Dashboard'
-import{store} from'./redux/store'
-import { Provider } from 'react-redux'
+import Home from "./pages/Dashboard";
+import { RootState } from "./redux/store";
+import { useSelector } from "react-redux";
 
 function App() {
-  return (
-    <Provider store={store} >
-    <Home/>
-    </Provider>
-  )
+  const theme = useSelector((state: RootState) => state.themeReducer);
+
+  return <Home theme={theme.activeTheme} />;
 }
 
-export default App
+export default App;
