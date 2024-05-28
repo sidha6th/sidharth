@@ -10,8 +10,10 @@ export namespace Constants {
   };
 
   export const dimensions = {
-    sideBarWidth: 60,
-    sidePanelDefaultWidth: 400,
+    sideBarWidth: 40,
+    topBarHeight:35,
+    minSidePanelWidth:150,
+    sidePanelDefaultWidth: 300,
   };
 
   export const commonStyleSheetClass = {

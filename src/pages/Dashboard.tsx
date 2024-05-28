@@ -1,5 +1,5 @@
 import "./Dashboard.css";
-import { TopTabBar } from "../components/top_bar/TopBar";
+import { TopBar } from "../components/top_bar/TopBar";
 import { BottomBar } from "../components/bottom_bar/BottomBar";
 import { SideBar } from "../components/side_bar/SideBar";
 import { SidePanel } from "../components/side_panel/SidePanel";
@@ -13,13 +13,22 @@ function Home(arg: HomeArg) {
   return (
     <>
       <div id="dashboard">
-        <TopTabBar />
+        {/* // ----------------- Top Bar ----------------- // */}
+        <TopBar />
+        {/* // ----------------- Top Bar ----------------- // */}
         <div id="view-holder">
-          <SideBar/>
+          {/* // ----------------- Side Elements ----------------- // */}
+          <SideBar />
           <SidePanel />
+          {/* // ----------------- Side Elements ----------------- // */}
+
+          {/* // ----------------- Center Editor view ----------------- // */}
           <EditorsViewHolder />
+          {/* // -----------------  Center Editor view ----------------- // */}
         </div>
+        {/* // ----------------- Bottom Bar ----------------- // */}
         <BottomBar />
+        {/* // ----------------- Bottom Bar ----------------- // */}
       </div>
     </>
   );

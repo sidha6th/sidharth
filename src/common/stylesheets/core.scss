@@ -1,0 +1,15 @@
+@mixin colum{
+    display: flex;
+    flex-direction: column
+  }
+  
+  @mixin row{
+    display: flex;
+    flex-direction: row
+  }
+
+  @mixin noInteraction{
+    user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;
+  }

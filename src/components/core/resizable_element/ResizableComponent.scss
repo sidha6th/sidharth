@@ -1,0 +1,21 @@
+@import'../../../common/stylesheets/core.scss';
+@import'../../../common/stylesheets/ButtonHover.scss';
+@import '../../../common/stylesheets/CustomAlignment.scss';
+
+.resizable {
+    height: 100%;
+    @include row();
+    @include AlingAfterSideBar();
+}
+
+#dragger {
+    width: 3px;
+    height: 100%;
+    z-index: 1;
+    @include hoverStyle(#0776c7);
+    position: absolute;
+    right: 0;
+    &:hover {
+        cursor: w-resize;
+    }
+}

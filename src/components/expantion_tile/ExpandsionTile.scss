@@ -8,4 +8,5 @@
     height: 20px;
     padding-left: 10px;
     @include hoverStyle;
+    user-select: none;
 }
