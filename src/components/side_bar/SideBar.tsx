@@ -1,6 +1,14 @@
-import { Constants } from '../../common/constant';
-import './SideBar.scss'
+import SvgExplore from "../../assets/svg/Explore";
+import { Constants } from "../../common/constant";
+import { Button } from "../core/button/Button";
+import "./SideBar.scss";
 
 export function SideBar() {
-    return <div id={"side-bar"} style={{width:`${Constants.dimensions.sideBarWidth}px`}}></div>;
+  const width = Constants.dimensions.sideBarWidth;
+
+  return (
+    <div id={"side-bar"} style={{ width: `${width}px` }}>
+      <Button child={<SvgExplore />} onClick={() => {}} />
+    </div>
+  );
 }

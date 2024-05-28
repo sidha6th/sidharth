@@ -33,7 +33,7 @@ export function EditorsViewHolder() {
   const state = useSelector((state: RootState) => state.editorReducer);
 
   return (
-    <div id="pages-wrapper" style={{ width: `${viewSize}px` }}>
+    <div id="pages-wrapper">
       <PagesTitleCardHoldingComponent/>
       <div className="opened-page-holder">
         {state.openedEditors.map((_) => EditorViewComponent())}

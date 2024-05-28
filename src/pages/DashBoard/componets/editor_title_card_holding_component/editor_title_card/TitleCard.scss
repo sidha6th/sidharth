@@ -1,4 +1,4 @@
-@import '../../../../../common/stylesheets/ButtonHover.scss';
+@import '../../../../../core/stylesheets/ButtonHover.scss';
 
 #opened-page-title-card {
     align-items: center;
@@ -21,13 +21,12 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    @include buttonHover()
+    @include buttonHover();
 }
 
 .close-button {
-    color: white;
     padding: 0;
     margin: 0;
-    width: 9px;
-    height: 9px;
+    width: 13px;
+    height: 13px;
 }

@@ -1,35 +1,42 @@
-@import '../../common/stylesheets/CustomAlignment.scss';
+@import '../../core/stylesheets/CustomAlignment.scss';
+
 #side-panel {
   background-color: #212121;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  user-select: none;
 }
-p,.arrow-down{
+
+
+.arrow-down {
   padding: 0px;
   margin: 0px;
 }
-.title1{
+
+.title1 {
   font-size: 10px;
-  font-weight:100;
+  font-weight: 100;
 }
-.proj-name{
+
+.proj-name {
   font-size: 10px;
   font-weight: 200;
 }
 
-.title-box,.title-box2{
+.title-box,
+.title-box2 {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 50px;
   padding: 0px 10px 0px 10px;
 }
-.title-box{
+
+.title-box {
   justify-content: space-between;
 }
-.title-box2{
+
+.title-box2 {
   justify-content: start;
 }

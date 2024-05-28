@@ -1,8 +1,9 @@
-@import './common/stylesheets/core.scss';
+@import './core/stylesheets/core.scss';
 
 body {
   padding: 0px;
   margin: 0px;
+  user-select: none;
 }
 p {
   color: rgba(255, 255, 255, 0.87);
@@ -10,6 +11,7 @@ p {
   font-weight: 100 !important;
   font-size: 10px !important;
   padding: 0px;
+
   @include noInteraction()
 }
 

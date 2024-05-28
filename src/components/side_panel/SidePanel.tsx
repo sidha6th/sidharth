@@ -6,8 +6,6 @@ import { ResizableComponent } from "../core/resizable_element/ResizableComponent
 import { Constants } from "../../common/constant";
 
 export function SidePanel() {
-  
-
   return (
     <ResizableComponent initialWidth={Constants.dimensions.sidePanelDefaultWidth}
       child={

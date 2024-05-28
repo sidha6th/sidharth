@@ -39,9 +39,9 @@ export function ResizableComponent(arg: ResizableComponentArg) {
   };
 
   return (
-    <div className="resizable" style={{ width: widthState }}>
-      <div ref={resizableHandle} id="dragger" onMouseDown={onMouseDown}></div>
+    <div className="resizable" style={{ width: widthState}}>
       {arg.child}
+      <div ref={resizableHandle} id="dragger" onMouseDown={onMouseDown}></div>
     </div>
   );
 }
