@@ -1,11 +1,14 @@
 import Home from "./pages/Dashboard";
-import { RootState } from "./redux/store";
-import { useSelector } from "react-redux";
+import "./index.scss";
+import "./core/theme.scss";
+import { setTheme } from "./core/Theme";
+import { useEffect } from "react";
 
 function App() {
-  const theme = useSelector((state: RootState) => state.themeReducer);
-
-  return <Home theme={theme.activeTheme} />;
+  useEffect(() => {
+    setTheme();
+  }, []);
+  return <Home />;
 }
 
 export default App;

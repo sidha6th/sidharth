@@ -5,11 +5,7 @@ import { SideBar } from "../components/side_bar/SideBar";
 import { SidePanel } from "../components/side_panel/SidePanel";
 import { EditorsViewHolder } from "./DashBoard/componets/editors_view_holder/EditorsViewHolder";
 
-type HomeArg = {
-  theme: AppTheme;
-};
-
-function Home(arg: HomeArg) {
+function Home() {
   return (
     <>
       <div id="dashboard">
@@ -36,9 +32,4 @@ function Home(arg: HomeArg) {
 
 export default Home;
 
-{
-  /* <FlutterProgramStyledText
-              className="Sidharth_R"
-              skills={["Flutter", "React", "Dart", "TypeScript"]}
-            /> */
-}
+

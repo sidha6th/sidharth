@@ -1,5 +1,5 @@
 #top-tab-bar {
-  background-color: #333333;
+  background-color: var(--top-bar-bg);
   border-radius: 10px 10px 0px 0px;
   display: flex;
   flex-direction: row;
@@ -16,22 +16,22 @@
 }
 
 .red {
-  background-color: #ed484f;
+  background-color: var(--red);
   &:hover {
-    box-shadow: 0 0 2px 2px #ed484f;
+    box-shadow: 0 0 2px 2px var(--red);
   }
 }
 
 .yellow {
-  background-color: #f8b42b;
+  background-color: var(--yellow);
   &:hover {
-    box-shadow: 0 0 2px 2px #f8b42b;
+    box-shadow: 0 0 2px 2px var(--yellow);
   }
 }
 
 .green {
-  background-color: #27d93b;
+  background-color: var(--green);
   &:hover {
-    box-shadow: 0 0 2px 2px #27d93b;
+    box-shadow: 0 0 2px 2px var(--green);
   }
 }
