@@ -1,5 +1,40 @@
 #top-tab-bar {
-  background-color: #333333;
-  height: 40px;
+  background-color: var(--top-bar-bg);
+  height: var(--top-bar-height);
+  width:100%;
   border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: start;
+  align-items: center;
+  padding-left: 10px;
+}
+
+#colored-circle {
+  width: var(--top-bar-circle-size);
+  height: var(--top-bar-circle-size);
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.red {
+  background-color: var(--red);
+  &:hover {
+    box-shadow: 0 0 2px 2px var(--red);
+  }
+}
+
+.yellow {
+  background-color: var(--yellow);
+  &:hover {
+    box-shadow: 0 0 2px 2px var(--yellow);
+  }
+}
+
+.green {
+  background-color: var(--green);
+  &:hover {
+    box-shadow: 0 0 2px 2px var(--green);
+  }
 }

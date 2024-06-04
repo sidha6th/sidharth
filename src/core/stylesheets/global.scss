@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--editor-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-bg);
+}
+
+::-webkit-scrollbar-corner{
+  background: var(--scroll-bar-bg);
+}

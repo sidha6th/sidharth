@@ -1,6 +1,5 @@
-import './BottomBar.css'
-
+import "./BottomBar.css";
 
 export function BottomBar() {
-    return <div id="bottom-bar"></div>
+  return <div id="bottom-bar"></div>;
 }

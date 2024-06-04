@@ -1,0 +1,43 @@
+@import '../../core/stylesheets/CustomAlignment.scss';
+
+#side-panel {
+  background-color: var(--side-panel-bg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  
+  flex-direction: column;
+}
+
+
+.arrow-down {
+  padding: 0px;
+  margin: 0px;
+}
+
+.title1 {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.proj-name {
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.title-box,
+.title-box2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+  padding: 0px 10px 0px 10px;
+}
+
+.title-box {
+  justify-content: space-between;
+}
+
+.title-box2 {
+  justify-content: start;
+}

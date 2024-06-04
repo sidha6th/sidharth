@@ -1,5 +1,8 @@
 #bottom-bar {
-  background-color: #0776c7;
-  height: 20px;
+  background-color: var(--bottom-bar-bg);
+  height: var(--bottom-bar-height);
+  width: 100%;
+  flex-shrink: 0;
   border-radius: 0px 0px 10px 10px;
+  z-index: 1;
 }
