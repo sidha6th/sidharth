@@ -1,16 +1,19 @@
 #top-tab-bar {
   background-color: var(--top-bar-bg);
+  height: var(--top-bar-height);
+  width:100%;
   border-radius: 10px 10px 0px 0px;
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
   justify-content: start;
   align-items: center;
   padding-left: 10px;
 }
 
 #colored-circle {
-  width: 10px;
-  height: 10px;
+  width: var(--top-bar-circle-size);
+  height: var(--top-bar-circle-size);
   border-radius: 50%;
   margin-right: 6px;
 }

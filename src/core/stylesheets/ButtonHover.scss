@@ -1,12 +1,12 @@
-@mixin hoverStyle($hoverBackground:#1b1b1b) {
+@mixin hoverStyle($hoverBackground:var(--editor-bg)) {
   &:hover {
       background-color: $hoverBackground ;
   }
 }
 
-@mixin buttonHover($hoverBackground:#212121) {
+@mixin buttonHover() {
   &:hover {
-      background-color: $hoverBackground ;
-      border-radius: 4px;
+    background-color: var(--side-panel-bg);
+    border-radius: 4px;
   }
 }

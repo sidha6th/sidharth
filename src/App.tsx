@@ -1,14 +1,25 @@
-import Home from "./pages/Dashboard";
-import "./index.scss";
-import "./core/theme.scss";
-import { setTheme } from "./core/Theme";
+import Home from "./pages/DashBoard/Dashboard";
+import { setTheme } from "./core/theme/Theme";
 import { useEffect } from "react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import { store } from "./redux/store.ts";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
 
 function App() {
   useEffect(() => {
-    setTheme();
+    return setTheme();
   }, []);
-  return <Home />;
+
+ return <Home/>
 }
 
 export default App;

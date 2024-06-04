@@ -1,28 +1,22 @@
-@import './core/stylesheets/core.scss';
-
-body {
+* {
   padding: 0px;
   margin: 0px;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
   user-select: none;
 }
 
 p {
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--primary-white);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100 !important;
   font-size: 10px !important;
   padding: 0px;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1b1b1b;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #262626;
 }

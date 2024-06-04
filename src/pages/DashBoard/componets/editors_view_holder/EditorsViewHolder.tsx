@@ -1,43 +1,19 @@
-import { useEffect, useState } from "react";
-import "./EditorsViewHolder.css";
-import { Constants } from "../../../../common/constant";
-import { EditorViewComponent } from "../editor_page/EditorPage";
+import style from'./EditorsViewHolder.module.css'
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../redux/store";
 import { PagesTitleCardHoldingComponent } from "../editor_title_card_holding_component/EditorTitleCardHoldigComponent";
+import { searchForFile as searchForPage } from "../../../../core/app_state/app_dir";
 
 export function EditorsViewHolder() {
-  const [viewSize, setSize] = useState(window.outerWidth);
-
-  useEffect(() => {
-    const dimensions = Constants.dimensions;
-    const sideComponentsWidth =
-      dimensions.sideBarWidth + dimensions.sidePanelDefaultWidth;
-
-    const handleResize = () => {
-      const newSize = window.innerWidth - sideComponentsWidth;
-      if (newSize !== viewSize) {
-        setSize(newSize);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const state = useSelector((state: RootState) => state.editorReducer);
+  const path = useSelector(
+    ({ editorReducer }: RootState) =>
+      editorReducer.openedEditorsPath[editorReducer.activeEditorIndex]
+  );
 
   return (
-    <div id="pages-wrapper">
-      <PagesTitleCardHoldingComponent/>
-      <div className="opened-page-holder">
-        {state.openedEditors.map((_) => EditorViewComponent())}
-      </div>
+    <div className={style.viewHolder}>
+      <PagesTitleCardHoldingComponent />
+      {searchForPage(path)?.page??<></>}
     </div>
   );
 }

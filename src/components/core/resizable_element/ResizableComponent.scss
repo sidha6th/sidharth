@@ -12,8 +12,8 @@
 #dragger {
     width: $resizable-drager-width;
     height: 100%;
-    background-color: #212121;
-    @include hoverStyle(#0776c7);
+    background-color: var(--side-panel-bg);
+    @include hoverStyle(var(--bottom-bar-bg));
     &:hover {
         cursor: w-resize;
     }

@@ -1,34 +1,28 @@
-import './ExpansionTileListView.scss'
-import { useDispatch } from "react-redux";
-import { onTapEditorTitleCard } from "../../../redux/slice/editor_slice"
+import "./ExpansionTileListView.scss";
 import { ExpandableTile } from "../../expantion_tile/ExpantionTile";
-import { FolderOrFile } from '../../../common/types/file_or_folders';
+import { FileOrDir } from "../../../core/app_state/types";
 
-
-type ExpansionTileListHolderArg={
-  paddingLeft?:string|number,
+type ExpansionTileListHolderArg = {
+  paddingLeft?: string | number;
   leftBorder?: boolean;
-  folders?: FolderOrFile[]
-}
+  parentPath: string;
+  folders?: FileOrDir[];
+};
 
-export function ExpansionTileListHolder(arg:ExpansionTileListHolderArg) {
-  const dispatch = useDispatch();
-
-  function onclick(file: FolderOrFile) {
-    dispatch(onTapEditorTitleCard(file));
-  }
-
+export function ExpansionTileListHolder(arg: ExpansionTileListHolderArg) {
   return (
-    <div className="expansion-tile-list" style={{paddingLeft:`${arg.paddingLeft}px`}}>
+    <div
+      className="expansion-tile-list"
+      style={{ paddingLeft: `${arg.paddingLeft}px` }}
+    >
       {arg.folders?.map((value) => (
         <ExpandableTile
-        key={`${value.id}`}
-        onClick={() => onclick(value)}
-        fileOrFolder={value}
-        leftBorder={arg.leftBorder}
+          parentPath={arg.parentPath}
+          key={`${value.name}`}
+          fileOrDir={value}
+          leftBorder={arg.leftBorder}
         />
       ))}
     </div>
   );
 }
-

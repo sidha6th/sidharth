@@ -1,16 +1,29 @@
 @import '../../../../../core/stylesheets/ButtonHover.scss';
 
-#opened-page-title-card {
+
+.title-card {
     align-items: center;
     display: flex;
-    background-color: #1b1b1b;
     flex-direction: row;
-    padding-left:15px;
+    background-color: var(--side-panel-bg);
+
+    &:hover {
+        background-color: var(--editor-bg);
+    }
 }
 
-p {
+.title-card[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+
+.title {
     font-weight: 600;
     font-size: 12px;
+    padding:9px 10px 9px 15px;
+    margin: 0;
 }
 
 .buttonBG {

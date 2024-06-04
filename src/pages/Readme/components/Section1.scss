@@ -1,0 +1,159 @@
+$title-landing-position: 10%;
+
+@mixin font-style($weight: 700) {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: 'Elgoc Alt', 'Times New Roman', sans-serif;
+    font-size: 100px;
+    line-height: 0.9;
+    font-stretch: 100%;
+    font-weight: $weight;
+    text-align: center;
+    color: #ffffff;
+    mix-blend-mode: soft-light;
+}
+
+@mixin image {
+    position: absolute;
+    width: 500px;
+    transform: translateY(10%) translateX(-50%);
+    animation-delay: 2s;
+    left: 50%;
+}
+
+.section1 {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.actual-image {
+    @include image;
+    opacity: 1;
+    animation: actual-image-animation 2s cubic-bezier(0, 0.74, 1, 0.08);
+}
+
+@keyframes actual-image-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(1.2)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(10%) translateX(-50%) scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(10%) translateX(-50%)
+    }
+}
+
+#img-on-hover:hover {
+    opacity: 1;
+}
+
+.croped-image {
+    @include image;
+    opacity: 0;
+    animation: croped-image-animation 3s cubic-bezier(0, 0.74, 1, 0.08);
+}
+
+@keyframes croped-image-animation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(1.2)
+    }
+
+    33.33% {
+        opacity: 1;
+        transform: translateY(10%) translateX(-50%) scale(1.2);
+    }
+
+    66.66% {
+        opacity: 1;
+        transform: translateY(10%) translateX(-50%)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10%) translateX(-50%)
+    }
+}
+
+.name {
+    @include font-style;
+    position: absolute;
+    opacity: 0;
+    left: 30%;
+    top: 0;
+    margin-top: 0;
+    animation: name-animation forwards;
+    animation-duration: 1s;
+}
+
+@keyframes name-animation {
+    to {
+        top: 40%;
+        opacity: 1;
+    }
+}
+
+.name-suffix {
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    @include font-style;
+    animation: name-suffix forwards;
+    transform-origin: center;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+}
+
+
+@keyframes name-suffix {
+    0% {
+        transform: rotateZ(-10deg);
+        opacity: 0.5;
+    }
+
+    25% {
+        transform: rotateZ(10deg);
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: rotateZ(5deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: rotateZ(-5deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+}
+
+.h3-sub {
+    position: absolute;
+    opacity: 0;
+    @include font-style();
+    left: 50%;
+    top: 40%;
+    margin-top: calc(100px);
+    animation: sum-title-animation forwards;
+    animation-delay: 0.5s;
+    animation-duration: 0.5s;
+}
+
+@keyframes sum-title-animation {
+    to {
+        left: 35%;
+        opacity: 1;
+    }
+}

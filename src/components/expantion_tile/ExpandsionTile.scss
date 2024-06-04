@@ -7,6 +7,6 @@
     justify-content: start;
     height: 20px;
     padding-left: 10px;
-    @include hoverStyle;
+    @include hoverStyle();
     user-select: none;
 }

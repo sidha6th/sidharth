@@ -1,26 +1,48 @@
+import "./ExpandsionTile.scss";
 import { useState } from "react";
 import { ArrowIcon } from "../icons/arrow_icon/ArrowIcon";
-import "./ExpandsionTile.scss";
+import { onClickFile } from "../../redux/slice/editor_slice";
 import { ExpansionTileListHolder } from "../side_panel/folder_or_file_list_holder/ExpansionTileListView";
 import { AppColors } from "../../common/Colors";
-import { FolderOrFile } from "../../common/types/file_or_folders";
 import { Constants } from "../../common/constant";
+import { FileOrDir } from "../../core/app_state/types";
+import { useDispatch } from "react-redux";
 
 type FileOrFolderItemArg = {
-  onClick: () => void;
   leftBorder?: boolean;
-  fileOrFolder: FolderOrFile;
+  parentPath: string;
+  fileOrDir?: FileOrDir;
 };
 
 export function ExpandableTile(arg: FileOrFolderItemArg) {
+  const dispatch = useDispatch();
+  const filePath = arg.parentPath + arg.fileOrDir?.name;
   const [isOpen, toggleFolder] = useState(false);
 
-  const onClick = () => {
+  function onClickFolder() {
     toggleFolder(!isOpen);
-    if (arg.fileOrFolder.isFile) {
-      arg.onClick();
-    }
-  };
+  }
+
+  function onClick() {
+    dispatch(onClickFile(filePath));
+  }
+
+  // --------------------  ui -------------------- //
+  if (arg.fileOrDir?.type == "file") {
+    return (
+      <div
+        className="expandable-tile selectable"
+        style={{
+          borderLeft: arg.leftBorder
+            ? `solid 0.1px ${AppColors.lineGray}`
+            : "none",
+        }}
+        onClick={onClick}
+      >
+        <p>{arg.fileOrDir?.name}</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -31,14 +53,15 @@ export function ExpandableTile(arg: FileOrFolderItemArg) {
             ? `solid 0.1px ${AppColors.lineGray}`
             : "none",
         }}
-        onClick={onClick}
+        onClick={onClickFolder}
       >
-        {arg.fileOrFolder.isFile ? <></> : <ArrowIcon opened={isOpen} marginRight={10} />}
-        <p>{arg.fileOrFolder.name}</p>
+        <ArrowIcon opened={isOpen} marginRight={10} />
+        <p>{arg.fileOrDir?.name}</p>
       </div>
       {isOpen ? (
         <ExpansionTileListHolder
-          folders={arg.fileOrFolder.children}
+          parentPath={arg.parentPath + arg.fileOrDir?.path}
+          folders={Array.from(arg.fileOrDir?.children.values() ?? [])}
           paddingLeft={Constants.styles.margin.word}
           leftBorder
         />
@@ -47,4 +70,5 @@ export function ExpandableTile(arg: FileOrFolderItemArg) {
       )}
     </>
   );
+  // --------------------  ui -------------------- //
 }
